@@ -13,7 +13,7 @@
 
     <groupId>dev.ikm.test-env</groupId>
     <artifactId>tinkar-schema-test-env-repo</artifactId>
-    <version>1.37.0</version>
+    <version>1.38.0-SNAPSHOT</version>
 
     <name>Tinkar Schema: Java</name>
     <url>https://github.com/IKM/tinkar-proto</url>
