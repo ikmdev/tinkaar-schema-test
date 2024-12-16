@@ -42,7 +42,7 @@ jobs:
 
       - name: Build IKMDEV Code
         if: github.event.repository.name != 'github_actions_test'
-        uses: ikmdev/maven-clean-install-build-action@v1.1.0
+        uses: ikmdev/maven-clean-install-build-action@testing-build
         with:
           branch_name: ${{env.BRANCH_NAME}}
           sonarcloud_token: ${{ secrets.SONAR_TOKEN }}
