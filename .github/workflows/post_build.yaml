@@ -41,14 +41,12 @@ jobs:
         run: |
               ls src/main/java-generated
       
-      - name: Post Build Action
+      - name: IKMDEV Post Build Action
         id: ikmdev_post_build
-        uses: ikmdev/maven-post-release-action@poc-testing
+        uses: ikmdev/maven-post-build-action@poc-testing
         with:
             nexus_repo_password: ${{secrets.EC2_NEXUS_PASSWORD}}
-            repo_name:  ${{github.event.workflow_run.head_repository.full_name}}
             branch_name: ${{github.event.workflow_run.head_branch}}
-            ikmdevops_pat: ${{secrets.IKMDEVOPS_PAT_TOKEN}}
             github_token: ${{secrets.GITHUB_TOKEN}}
             ossrh_username: ${{secrets.OSSRH_TOKEN_USER}}
             ossrh_token: ${{secrets.OSSRH_TOKEN_PASS}}
