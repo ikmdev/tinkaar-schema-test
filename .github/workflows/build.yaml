@@ -11,14 +11,19 @@ env:
   BRANCH_NAME: ${{github.ref_name}}
 
 jobs:
-  build-job:
-    name: Build Job
+  pr-verification:
+    name: Pull Request Validation
     runs-on: ubuntu-24.04
+    if: github.event_name == 'pull_request'
     steps:
       - name: Pull Request Version Validation
         if: github.event_name == 'pull_request'
         uses: ikmdev/maven-pull-request-version-validation-action@main
-
+        
+  build-job:
+    name: Build Job
+    runs-on: ubuntu-24.04
+    steps:
       - name: Checkout Code
         uses: actions/checkout@v4
         
